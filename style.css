@@ -16,22 +16,49 @@
         --fonte-mulish: 'Mulish', sans-serif;
     }
 
-    *{
+    * {
         margin: 0;
         padding: 0;
+        list-style: none;
+        text-decoration: none;
+    }
+
+    /*body::-webkit-scrollbar {
+        overflow-x: hidden; 
+    }*/
+
+    .hamburguer {
+        /*background-color: red;*/
+        width: 2rem;
+        height: 2rem;
+        position: fixed;
+        z-index: 100; /* trás o objeto pra frente das camadas*/
+        right: 2rem;
+        top: 2rem;
+        display: flex;
+        flex-direction:column;
+        justify-content:space-evenly;
+        cursor: pointer;
+    }
+
+    .line {
+        width: 100%;
+        height: 0.1rem;
+        background-color: white;
+        box-shadow: 0.1rem 0.1rem 1px black;
     }
 
     header {
         width: 100%;
-        height: 100%vh;
-        overflow: hidden;
+        height: 100vh;
+        overflow-x: hidden; 
         position: relative;
     }
 
     .img-wrapper {
         width: 100%;
         height: 100%;
-        overflow: hidden;
+        overflow-x: hidden;
         background-color:rgba(0,0,0,0.8);
     }
 
@@ -109,4 +136,65 @@
             transform: translateY(0) rotateY(0);
             opacity: 1;
         }
+    }
+
+    .sidebar {
+        width: 20rem;
+        height: 100vh;
+        background-color:white;
+        position: fixed;
+        top: 0;
+        right: -20rem;
+        transition: all 1s;
+    }
+
+    .sidebar.show-menu {
+        right: 0;
+    }
+
+    .menu {
+        position: absolute;
+        top: 40%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+    }
+
+    .menu-item {
+        text-align: center;
+    }
+
+    .menu-link {
+        font-family: var(--fonte-mulish);
+        font-size: 2rem;
+        color: #555;
+        transition: color 1s;
+    }
+
+    .menu-link:hover {
+        color: #6a3093;
+    }
+
+    .social-media {
+        position: absolute;
+        bottom: 2rem;
+        width: 100%;
+        display: flex;
+        justify-content: space-evenly;
+    }
+
+    .social-media i {
+        background-color: #6a3093;
+        color: rgba(255, 255, 255, 1);
+        height: 2.5rem;
+        width: 2.5rem;
+        font-size: 1.5rem;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        border-radius: 50%;
+        transition: background-color 1s;
+    }
+    
+    .social-media i:hover {
+        background-color: #a044ff;
     }
